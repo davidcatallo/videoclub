@@ -1,40 +1,50 @@
-<?php
-
-class Movie
-{
+<?php 
+// Movie.php
+class Movie {
+    
     protected $id;
     protected $title;
-    protected $release_date;
-    protected $synopsis;
+    protected $releaseDate;
+    protected $plot;
     protected $id_category;
-
-    public function __construct($title, $release_date, $synopsis) {
-
-        $this->id($id);
-        $this->setTitle($title);
-        $this->setReleaseDate($release_date);
-        $this->setSynopsis($synopsis);
-        $this->id_category($category);
+    public function __construct() {
     }
-
-    public function id($id){
-        return $this->id = $id;
+    public function id() {
+        return $this->id;
     }
-
+    public function title() {
+        return $this->title;
+    }
+    public function releaseDate() {
+        return $this->releaseDate;
+    }
+    public function plot() {
+        return $this->plot;
+    }
+    public function idCategory() {
+        return $this->idCategory;
+    }
+    
+    public function category() {
+        // return $this->category->name;
+    }
     public function setTitle($title) {
-        return $this->title = $title;
+        $this->title = $title;
+        return $this;
     }
-
-    public function setReleaseDate($release_date) {
-        return $this->release_date = $release_date;
+    public function setReleaseDate($releaseDate) {
+        $this->releaseDate = $releaseDate;
+        return $this;
     }
-
-    public function setSynopsis($synopsis) {
-        return $this->synopsis = $synopsis;
+    public function setPlot($plot) {
+        $this->plot = $plot;
+        return $this;
     }
-
-    public function id_category($id_category){
-        return $this->id_category = $id_category;
+    public function setCategory(Category $category) {
+        // $this->category_id = $category->id();
+        return $this;
+    }
 }
+$movie = new Movie();
+$movie->title();
 
-?>
