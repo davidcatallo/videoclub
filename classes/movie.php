@@ -7,6 +7,7 @@ class Movie {
     protected $releaseDate;
     protected $plot;
     protected $id_category;
+    
     public function __construct() {
     }
     public function id() {
