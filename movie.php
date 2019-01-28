@@ -18,23 +18,23 @@ class Movie
     }
 
     public function id($id){
-        $this->id = $id;
+        return $this->id = $id;
     }
 
     public function setTitle($title) {
-        $this->title = $title;
+        return $this->title = $title;
     }
 
     public function setReleaseDate($release_date) {
-        $this->release_date = $release_date;
+        return $this->release_date = $release_date;
     }
 
     public function setSynopsis($synopsis) {
-        $this->synopsis = $synopsis;
+        return $this->synopsis = $synopsis;
     }
 
     public function id_category($id_category){
-        $this->id_category = $id_category;
+        return $this->id_category = $id_category;
 }
 
 ?>
