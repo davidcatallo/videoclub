@@ -4,22 +4,25 @@ foreach( glob('config/*.php') as $config ) { require_once $config; }
 foreach( glob('classes/*.php') as $class ) { require_once $class; }
 
 
+$cat = new Category("Humour", "Des films drôles");
+// $cat->setTitle('Nouveau titre 2');
+// $cat->save();
+// $cat->delete();
 
-$cat = new Category("Comédie", "Qui fait rire");
+$categorie = Category::findOne(25);
+var_dump($categorie);
 
 
+// var_dump($cat);
 
-$cat2 = new Category('Horror', 'Films qui font peur');
+// $cat->delete();
 
+// $cat->getList();
 
-$cat3 = new Category('Action', 'Films qui font de l\'action');
-$cat3->save();
+//$list = Category::findAll();
 
-function destroy_cat($cat) 
-{
-    unset($cat);
-}
-
-destroy_cat($cat2);
-
-var_dump($cat2);
+// $categorie = Category::find([
+//     ['name', 'like', 'humour'],
+//     ['description', '=', 'rire'],
+//     ['orderBy', 'id', 'desc']
+// ]);
