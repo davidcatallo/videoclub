@@ -1,13 +1,12 @@
 <?php 
 // Movie.php
-class Movie {
+class Movie extends Db {
     
     protected $id;
     protected $title;
     protected $releaseDate;
     protected $plot;
     protected $id_category;
-    
     public function __construct() {
     }
     public function id() {
@@ -45,7 +44,23 @@ class Movie {
         // $this->category_id = $category->id();
         return $this;
     }
+    public function save() {
+        $this->dbCreate("Movie", [
+            "title"         => $this->title(),
+            "release_date"  => $this->releaseDate(),
+            "plot"          => $this->plot()
+        ]);
+    }
+    public function deleteActor($idActor) {
+        $this->dbDelete('Movie', [
+            'id_movie' => $this->id(),
+            'id_actor' => $idActor
+        ]);
+    }
 }
 $movie = new Movie();
-$movie->title();
-
+/* 
+$movie->categoryId();
+$movie->category()->description();
+$movie->actors();
+ */
